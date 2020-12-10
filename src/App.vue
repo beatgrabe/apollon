@@ -23,6 +23,20 @@
     <v-main>
       <HelloWorld/>
     </v-main>
+
+    <v-bottom-navigation>
+      <v-btn>
+        <v-icon color="primary">mdi-view-headline</v-icon>
+      </v-btn>
+
+      <v-btn>
+        <v-icon color="primary">mdi-magnify</v-icon>
+      </v-btn>
+
+      <v-btn>
+        <v-icon color="primary">mdi-cog</v-icon>
+      </v-btn>
+    </v-bottom-navigation>
   </v-app>
 </template>
 
