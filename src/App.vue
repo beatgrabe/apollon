@@ -4,15 +4,19 @@
       app
       color="primary"
       dark
+      dense
     >
-      <div class="d-flex align-center">
+      <div class="title">
         Apollon
       </div>
 
       <v-spacer></v-spacer>
 
-      <v-btn icon>
-        <v-icon>mdi-dots-vertical</v-icon>
+      <v-btn
+        icon
+        small
+      >
+        <v-icon>mdi-dots-vertical </v-icon>
       </v-btn>
     </v-app-bar>
 
@@ -32,6 +36,6 @@ export default {
     HelloWorld,
   },
 
-  data: () => ({}),
-};
+  data: () => ({})
+}
 </script>
