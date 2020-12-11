@@ -21,15 +21,15 @@
     </v-app-bar>
 
     <v-main>
-      <HelloWorld/>
+      <router-view/>
     </v-main>
 
     <v-bottom-navigation>
-      <v-btn>
+      <v-btn to="home">
         <v-icon color="primary">mdi-view-headline</v-icon>
       </v-btn>
 
-      <v-btn>
+      <v-btn to="search">
         <v-icon color="primary">mdi-magnify</v-icon>
       </v-btn>
 
@@ -41,14 +41,8 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
-
 export default {
   name: 'App',
-
-  components: {
-    HelloWorld,
-  },
 
   data: () => ({})
 }
