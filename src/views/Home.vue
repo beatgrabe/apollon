@@ -2,6 +2,7 @@
   <div>
     <v-app-bar
       dense
+      flat
     >
       <div class="title">
         Home
@@ -18,20 +19,54 @@
     </v-app-bar>
 
     <div class="home">
-      <HelloWorld />
+      <v-list>
+        <v-subheader>Overview</v-subheader>
+        <v-list-item
+          v-for="item in overviewItems"
+          :key="item.text"
+        >
+          <v-list-item-content>
+            <v-list-item-title v-text="item.text" />
+          </v-list-item-content>
+        </v-list-item>
+
+        <v-spacer />
+
+        <v-subheader>Favorits</v-subheader>
+        <v-list-item
+          v-for="item in favorits"
+          :key="item.text"
+        >
+          <v-list-item-content>
+            <v-list-item-title v-text="item.text" />
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
     </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
 export default {
   name: 'Home',
 
-  components: {
-    HelloWorld
-  }
+  data: () => ({
+    overviewItems: [
+      {
+        text: 'WARNING'
+      },
+      {
+        text: 'STOP'
+      }
+    ],
+    favorits: [
+      {
+        text: 'Foo'
+      },
+      {
+        text: 'Bar'
+      }
+    ]
+  })
 }
 </script>
