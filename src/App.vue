@@ -24,22 +24,16 @@
       <router-view />
     </v-main>
 
-    <v-bottom-navigation>
+    <v-bottom-navigation grow>
       <v-btn to="home">
         <v-icon color="primary">
-          mdi-view-headline
+          mdi-home
         </v-icon>
       </v-btn>
 
       <v-btn to="search">
         <v-icon color="primary">
           mdi-magnify
-        </v-icon>
-      </v-btn>
-
-      <v-btn>
-        <v-icon color="primary">
-          mdi-cog
         </v-icon>
       </v-btn>
     </v-bottom-navigation>
