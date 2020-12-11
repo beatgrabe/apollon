@@ -1,37 +1,26 @@
 <template>
   <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-      dense
-    >
-      <div class="title">
-        Apollon
-      </div>
-
-      <v-spacer />
-
-      <v-btn
-        icon
-        small
-      >
-        <v-icon>mdi-dots-vertical </v-icon>
-      </v-btn>
-    </v-app-bar>
-
-    <v-main>
+    <v-main app>
       <router-view />
     </v-main>
 
-    <v-bottom-navigation grow>
-      <v-btn to="home">
+    <v-bottom-navigation
+      app
+      grow
+    >
+      <v-btn
+        height="56"
+        to="home"
+      >
         <v-icon color="primary">
-          mdi-home
+          mdi-domain
         </v-icon>
       </v-btn>
 
-      <v-btn to="search">
+      <v-btn
+        height="56"
+        to="search"
+      >
         <v-icon color="primary">
           mdi-magnify
         </v-icon>
