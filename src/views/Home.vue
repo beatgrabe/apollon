@@ -18,6 +18,24 @@
       </v-btn>
     </v-app-bar>
 
+    <div class="chart">
+      <doughnut />
+      <ul class="list">
+        <li class="cat1">
+          8 lorem
+        </li>
+        <li class="cat2">
+          4 ipsum
+        </li>
+        <li class="cat3">
+          2 dolor
+        </li>
+        <li class="cat4">
+          1 sum
+        </li>
+      </ul>
+    </div>
+
     <div class="home">
       <v-list>
         <v-subheader>Overview</v-subheader>
@@ -47,26 +65,54 @@
 </template>
 
 <script>
+import Doughnut from '../components/Doughnut'
+
 export default {
   name: 'Home',
 
-  data: () => ({
-    overviewItems: [
-      {
-        text: 'WARNING'
-      },
-      {
-        text: 'STOP'
-      }
-    ],
-    favorits: [
-      {
-        text: 'Foo'
-      },
-      {
-        text: 'Bar'
-      }
-    ]
-  })
+  components: {
+    Doughnut
+  },
+
+  data: () => {
+    return {
+      overviewItems: [
+        { text: 'WARNING' },
+        { text: 'STOP' }
+      ],
+      favorits: [
+        { text: 'Foo' },
+        { text: 'Bar' }
+      ]
+    }
+  }
 }
 </script>
+
+<style lang="scss" scoped>
+.chart {
+  align-items: center;
+  display: flex;
+  padding: 8px;
+
+  .cat1::marker {
+    color: deepskyblue;
+  }
+
+  .cat2::marker {
+    color: dodgerblue;
+  }
+
+  .cat3::marker {
+    color: aliceblue;
+  }
+
+  .cat4::marker {
+    color: silver;
+  }
+
+  .list {
+    font-size: 14px;
+  }
+}
+</style>
