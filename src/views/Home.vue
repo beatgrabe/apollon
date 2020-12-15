@@ -18,7 +18,10 @@
       </v-btn>
     </v-app-bar>
 
-    <div class="chart">
+    <div
+      v-if="doughnut"
+      class="chart"
+    >
       <doughnut />
       <ul class="list">
         <li class="cat1">
@@ -38,11 +41,14 @@
 
     <div class="home">
       <v-list>
-        <v-subheader>Overview</v-subheader>
+        <v-subheader>Recent</v-subheader>
         <v-list-item
-          v-for="item in overviewItems"
+          v-for="item in recents"
           :key="item.text"
         >
+          <v-list-item-icon>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-item-icon>
           <v-list-item-content>
             <v-list-item-title v-text="item.text" />
           </v-list-item-content>
@@ -55,6 +61,9 @@
           v-for="item in favorits"
           :key="item.text"
         >
+          <v-list-item-icon>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-item-icon>
           <v-list-item-content>
             <v-list-item-title v-text="item.text" />
           </v-list-item-content>
@@ -76,13 +85,14 @@ export default {
 
   data: () => {
     return {
-      overviewItems: [
-        { text: 'WARNING' },
-        { text: 'STOP' }
+      doughnut: false,
+      recents: [
+        { text: 'Baz', icon: 'mdi-check-circle-outline' },
+        { text: 'Quz', icon: 'mdi-alert-circle-outline' }
       ],
       favorits: [
-        { text: 'Foo' },
-        { text: 'Bar' }
+        { text: 'Foo', icon: 'mdi-alert-circle-outline' },
+        { text: 'Bar', icon: 'mdi-close-circle-outline' }
       ]
     }
   }
